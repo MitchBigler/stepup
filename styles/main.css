@@ -1,0 +1,58 @@
+:root {
+    --white: #FFF3EA;
+    --beige: #FFE9D7;
+    --purple: #3d348b;
+    --blue: #7678ed;
+    --orange: #f35b04;
+    --light-orange: #f18701;
+}
+
+body {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--purple);
+    font-size: 1em;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--purple);
+    color: var(--white);
+    flex-basis: 100%;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+}
+
+header > h1 {
+    padding: 0px 15px;
+}
+main {
+    background-color: var(--beige);
+    margin: 0;
+    display: grid;
+    grid-template-columns: 7% 51% 35% 7%;
+    grid-template-rows: 25% 50% 25%;
+    flex: 1;
+    width: 100%;
+
+}
+
+.main {
+    background-color: var(--white);
+    padding: 25px;
+    grid-area: 2 / 2 / 3 / 3;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.main > h1{
+    color: var(--orange);
+    font-weight: bolder;
+    font-size: 2em;
+}
+

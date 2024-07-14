@@ -10,7 +10,6 @@
 
 body {
     background-color: var(--white);
-    display: grid;
     gap:15px;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -24,7 +23,7 @@ header {
     display: grid;
     grid-template-columns: 33% 33% 33%;
     align-items: center;
-    margin-bottom: -15px;
+    margin-bottom: -5px;
 }
 
 #home {
@@ -66,6 +65,12 @@ nav {
 }
 nav ul{
     display: none;
+}
+footer {
+    text-align: center;
+    padding: .6em;
+    min-height: 10vh;
+    background-color: var(--beige);
 }
 
 section ul {

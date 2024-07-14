@@ -1,0 +1,218 @@
+:root {
+    --white: #FFF9F5;
+    --beige: #FFF3EA;
+    --purple: #322b73;
+    --light-purple: #3D348B;
+    --blue: #7678ed;
+    --orange: #f35b04;
+    --light-orange: #f18701;
+}
+
+body {
+    background-color: var(--white);
+    display: grid;
+    gap:15px;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--purple);
+    font-size: 1em;
+}
+
+header {
+    background-color: var(--white);
+    color: var(--purple);
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    align-items: center;
+    margin-bottom: -15px;
+}
+
+#home {
+    background: url(../img/mountains.jpg) center center, rgba(61, 52, 139, .6);
+    background-size: cover;
+    background-blend-mode: darken;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 60vh;
+    color: var(--white);
+    font-size: 2em;
+    font-weight: 500;
+}
+
+
+.welcome h1 {
+    color: var(--white);
+    font-weight: bolder;
+    font-size: 3.4em;
+    margin: 0;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    font-weight: 500;
+    gap:5px;
+}
+nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap:nowrap;
+}
+nav ul{
+    display: none;
+}
+
+section ul {
+    list-style-type: square;
+    padding-bottom: .5em;
+}
+
+section ul li{
+    color: var(--light-purple);
+    font-size: 1.6em;
+    font-weight: 400;
+    padding-bottom: 1em;
+}
+
+#about-us, #contact, #shop{
+    margin:0 auto;
+    max-width: 60%;
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+}
+
+.bars{
+    padding: 14px 15px;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+section > h1{
+    font-size: 3em;
+    font-weight: 600;
+}
+
+.image{
+    display: flex;
+    padding: 55px;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons {
+    padding-top: .7em;
+    position: relative;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-size: 0.6em;
+}
+
+.button1 {
+    color: var(--white);
+    border: 2px solid var(--white);
+    background-color: transparent;
+}
+
+.button2 {
+    color: var(--light-purple);
+    border: 3px solid var(--white);
+    background-color: var(--white);
+}
+
+.underline {
+    position: relative;
+    display: inline-block;
+}
+
+.underline::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: var(--light-orange);
+    position: absolute;
+    bottom: -10px;
+
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.video p {
+    margin-top: 0;
+    padding-right: 1em;
+    font-size: 2em;
+    font-weight: 500;
+    color: var(--blue);
+    max-width: 60%;
+}
+
+@media (min-width: 1300px) {
+
+    .bars{
+        display: none;
+        }
+
+    nav ul {
+        display: inline-block;
+        list-style-type: none;
+        margin: 0;
+        padding: 10px 0px;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+        font-weight: 600;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: var(--purple);
+        padding: 15px 15px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+
+    nav ul li a:hover {
+        background-color: var(--beige);
+        color: var(--purple);
+    }
+
+}

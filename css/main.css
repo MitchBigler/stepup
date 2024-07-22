@@ -8,13 +8,23 @@
     --light-orange: #f18701;
 }
 
+/* MAIN SECTIONS */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     background-color: var(--white);
-    gap:15px;
     margin: 0;
+    height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--purple);
     font-size: 1em;
+    display: flex;
+    flex-direction: column;
+
 }
 
 header {
@@ -25,6 +35,26 @@ header {
     align-items: center;
     margin-bottom: -5px;
 }
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap:nowrap;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    text-align: center;
+    padding: .6em;
+    min-height: 10vh;
+    background-color: var(--beige);
+    color: var(--light-purple);
+}
+
+/* HOME PAGE */
 
 #home {
     background: url(../img/mountains.jpg) center center, rgba(61, 52, 139, .6);
@@ -42,6 +72,12 @@ header {
     font-weight: 500;
 }
 
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .welcome h1 {
     color: var(--white);
@@ -49,6 +85,37 @@ header {
     font-size: 3.4em;
     margin: 0;
 }
+
+button {
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-size: 0.6em;
+}
+
+.buttons {
+    padding-top: .7em;
+    position: relative;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.button1 {
+    color: var(--white);
+    border: 2px solid var(--white);
+    background-color: transparent;
+}
+
+.button2 {
+    color: var(--light-purple);
+    border: 3px solid var(--white);
+    background-color: var(--white);
+}
+
+/* HEADER */
 
 .logo {
     display: flex;
@@ -58,20 +125,53 @@ header {
     font-weight: 500;
     gap:5px;
 }
-nav {
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap:nowrap;
+
+#about-us, #contact, #shop{
+    margin:0 auto;
+    max-width: 60%;
+    padding: 20px;
 }
-nav ul{
+
+.bars{
+    padding: 14px 15px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--purple);
+}
+
+.bars:hover {
+    color: var(--blue);
+}
+
+nav ul {
     display: none;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0px;
 }
-footer {
-    text-align: center;
-    padding: .6em;
-    min-height: 10vh;
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: 600;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--purple);
+    padding: 15px 15px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
     background-color: var(--beige);
+    color: var(--purple);
 }
+
+/* SECTIONS */
 
 section ul {
     list-style-type: square;
@@ -85,76 +185,9 @@ section ul li{
     padding-bottom: 1em;
 }
 
-#about-us, #contact, #shop{
-    margin:0 auto;
-    max-width: 60%;
-    padding: 20px;
-}
-
-.content {
-    display: flex;
-}
-
-.bars{
-    padding: 14px 15px;
-}
-
-.welcome {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact-info{
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-info p {
-    font-size: 1.2em;
-    font-weight: 400;
-}
-
-section > h1{
+section > h1 {
     font-size: 3em;
     font-weight: 600;
-}
-
-.image{
-    display: flex;
-    padding: 55px;
-    align-items: center;
-    justify-content: center;
-}
-
-.buttons {
-    padding-top: .7em;
-    position: relative;
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-}
-
-button {
-    padding: 10px 20px;
-    font-weight: 600;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
-    font-size: 0.6em;
-}
-
-.button1 {
-    color: var(--white);
-    border: 2px solid var(--white);
-    background-color: transparent;
-}
-
-.button2 {
-    color: var(--light-purple);
-    border: 3px solid var(--white);
-    background-color: var(--white);
 }
 
 .underline {
@@ -173,6 +206,25 @@ button {
 
 }
 
+/* CONTACT PAGE */
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+/* ABOUT US PAGE */
+
 .video {
     display: flex;
     flex-direction: column;
@@ -188,8 +240,21 @@ button {
     max-width: 60%;
 }
 
+/* WIDE SCREEN */
+@media (min-width: 900px) {
+
+        /* Contact Us */
+        .content {
+            display: flex;
+            flex-direction: row;
+        }
+    
+}
+
+/* WIDEst SCREEN */
 @media (min-width: 1300px) {
 
+    /* HEADER */
     .bars{
         display: none;
         }
@@ -199,25 +264,6 @@ button {
         list-style-type: none;
         margin: 0;
         padding: 10px 0px;
-    }
-
-    nav ul li {
-        display: inline-block;
-        margin-right: 20px;
-        font-weight: 600;
-    }
-
-    nav ul li a {
-        text-decoration: none;
-        color: var(--purple);
-        padding: 15px 15px;
-        border-radius: 10px;
-        display: inline-block;
-    }
-
-    nav ul li a:hover {
-        background-color: var(--beige);
-        color: var(--purple);
     }
 
 }

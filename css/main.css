@@ -171,6 +171,9 @@ nav ul li a:hover {
     color: var(--purple);
 }
 
+.theme-toggle {
+    margin: 12px 5px;
+}
 /* SECTIONS */
 
 section ul {

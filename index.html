@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!-- HEADER/DISCLAIMER
  
-Project:  Project3-Responsive Web Site
+Project:  Project4-Responsive Web Site
 Name: Mitchel Bigler
-Submitted: 7/14/24
+Submitted: 7/21/24
  
 I declare that the following source code was written by me, or provided
 by the instructor for this project. I understand that copying source
@@ -13,31 +13,38 @@ I acknowledge that  If I am found in violation of this policy this may result
 in a zero grade, a permanent record on file and possibly immediate failure of the class.
  
 --REFLECTION--
-This assignment challenged me a lot. I spent a lot of time learning about
-and understanding the JavaScript and what it's doing. The syntax that is used on
-the websites is much more condensed than I am used to.
-
-As inspiration, I thought I would make a fake website for a youtube channel that
+For this project, I thought I would make a fake website for a youtube channel that
 my dad has been wanting to make. It gave me a lot of ideas for a color pallete and
 and artwork.
 
---EXTRA ITEMS COMPLETED--
-Use fontawesome Icons (2pts)  YES (the bars when nav is squished)
+<PROJECT 4> I refactored and organized my css by sections which makes it much easier for me
+to navigate. I also feel like I understand buttons/functions better now. I made the responsive
+bars provide a working nav menu. The theme toggle changes the colors of the header to 
+dark mode and makes it a sidebar.
+
+--SELF GRADE--
+REFACTOR CSS-FIX      A
+CSS THEME             A
+CSS THEME TOGGLE      A
+
+MOBILE RESPONSIVE     A
 
 -->
 <html>
 <head>
     <title>Step Up Investing</title>
     <link rel="stylesheet" href="css/main.css">
+    <link id = "theme-sheet" rel="stylesheet" href="css/theme.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
     <header>
         <div class="info">
+            <button class="theme-toggle" onclick="toggleTheme()">Change Theme</button>
         </div>
         <div class="logo">
-            <img src="img/logo.svg" width="38px" height="32px">
+            <img id="logo" src="img/logo.svg" width="38px" height="32px">
             StepUp Investing
         </div>
         <nav>

@@ -41,7 +41,6 @@ document.querySelectorAll('nav a').forEach(link => {
 });
 
 
-
 /* 
 -----------------
 Nav bar drop down 
@@ -49,12 +48,44 @@ Nav bar drop down
 */
 function dropDownNav() {
 
+    // Get menu
     let menu = document.querySelector("nav ul");
+
+    // Show menu
     if (menu.style.display === "none" || menu.style.display === "") {
         menu.style.display = "flex";
         console.log("show");
-    } else {
+    }
+    // Hide menu if showing
+    else {
         menu.style.display = "none";
         console.log("hide");
+    }
+}
+
+
+/* 
+-----------------
+Change Theme
+-----------------
+*/
+
+// Get link
+var themeLink = document.getElementById("theme-sheet");
+var logo = document.getElementById("logo");
+
+themeLink.disabled = true;
+
+function toggleTheme() {
+    // Turn theme on
+    if (themeLink.disabled) {
+        themeLink.disabled = false;
+        logo.src = "img/logo_light.svg"
+    }
+    // Turn theme off
+    else {
+        themeLink.disabled = true;
+        logo.src = "img/logo.svg"
+
     }
 }

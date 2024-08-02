@@ -28,16 +28,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const bars = document.getElementById('bars');
     var themeLink = document.getElementById("theme-sheet");
     var logo = document.getElementById("logo");
+    let debounceTimeout;
 
-    // Set drop down orientation when it's just bars
+    // Set drop down orientation when it's just bars.
+    // Debounce to keep from instantly closing on mobile
     function dropDownNav() {
-        if (menu.style.display === 'none' || menu.style.display === '') {
-            menu.style.display = 'flex';
-            menu.style.flexDirection = 'column';
-        } else {
-            menu.style.display = 'none';
-        }
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'flex';
+                menu.style.flexDirection = 'column';
+            } else {
+                menu.style.display = 'none';
+            }
+        }, 90);
     }
+
 
     // Event listeners for bars. Touchstart for mobile tap
     bars.addEventListener('click', dropDownNav);
@@ -61,6 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Run on start
     handleResize();
+
+
+    /* ----THEME TOGGLE---- */
 
     // Change logo for light / dark mode
     function toggleTheme() {
@@ -117,10 +126,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById(sectionId).style.display = 'block';
                 
                 }
-                if (themeLink.disabled || window.innerWidth < 1050) {
-                // Hide nav bar
-                menu.style.display = 'none';
+                if ((window.innerWidth < 1300 && themeLink.disabled) || window.innerWidth < 1050) {
+                    // Hide nav bar
+                    menu.style.display = 'none';
                 }
             });
         });
-});
+    });

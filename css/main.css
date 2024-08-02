@@ -1,3 +1,20 @@
+/*
+Project:    Project5 - Personal Web Site
+Name:       Mitchel Bigler
+Submitted:  8/2/24
+
+Disclaimer:
+    I declare that the following source code was written by me, or provided
+    by the instructor for this project. I understand that copying source
+    code from any other source, providing source code to another student, 
+    or leaving my code on a public web site constitutes cheating.
+    I acknowledge that  If I am found in violation of this policy this may result
+    in a zero grade, a permanent record on file and possibly immediate failure of the class.
+ 
+Changes:
+    -- Added more rules to media query to fix iphone size
+*/
+
 :root {
     --white: #FFF9F5;
     --beige: #FFF3EA;
@@ -13,6 +30,12 @@
 html, body {
     height: 100%;
     margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -21,25 +44,25 @@ body {
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--purple);
-    font-size: 1em;
+    font-size: 0.9em;
     display: flex;
     flex-direction: column;
-
 }
 
 header {
     background-color: var(--white);
     color: var(--purple);
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     margin-bottom: -5px;
+    width: 100%;
 }
 
 nav {
     display: flex;
     justify-content: flex-end;
-    flex-wrap:nowrap;
+    flex-wrap: nowrap;
 }
 
 main {
@@ -54,67 +77,6 @@ footer {
     color: var(--light-purple);
 }
 
-/* HOME PAGE */
-
-#home {
-    background: url(../img/mountains.jpg) center center, rgba(61, 52, 139, .6);
-    background-size: cover;
-    background-blend-mode: darken;
-    text-align: center;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 60vh;
-    color: var(--white);
-    font-size: 2em;
-    font-weight: 500;
-}
-
-.welcome {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.welcome h1 {
-    color: var(--white);
-    font-weight: bolder;
-    font-size: 3.4em;
-    margin: 0;
-}
-
-button {
-    padding: 10px 20px;
-    font-weight: 600;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
-    font-size: 0.6em;
-}
-
-.buttons {
-    padding-top: .7em;
-    position: relative;
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-}
-
-.button1 {
-    color: var(--white);
-    border: 2px solid var(--white);
-    background-color: transparent;
-}
-
-.button2 {
-    color: var(--light-purple);
-    border: 3px solid var(--white);
-    background-color: var(--white);
-}
-
 /* HEADER */
 
 .logo {
@@ -123,16 +85,11 @@ button {
     align-items: center;
     font-size: 1.4em;
     font-weight: 500;
-    gap:5px;
+    padding: 8px 0px;
+    gap: 5px;
 }
 
-#about-us, #contact, #shop{
-    margin:0 auto;
-    max-width: 60%;
-    padding: 20px;
-}
-
-.bars{
+.bars {
     padding: 14px 15px;
     border: none;
     background-color: transparent;
@@ -173,15 +130,27 @@ nav ul li a:hover {
 
 .theme-toggle {
     margin: 12px 5px;
+    border-color: var(--purple);
+    color: var(--purple);
+    font-weight: 600;
+    max-width: 20vw;
+    border-radius: 10px;
 }
+
 /* SECTIONS */
+
+#about-us, #contact, #log-in {
+    margin: 0 auto;
+    max-width: 85%;
+    padding: 20px;
+}
 
 section ul {
     list-style-type: square;
     padding-bottom: .5em;
 }
 
-section ul li{
+section ul li {
     color: var(--light-purple);
     font-size: 1.6em;
     font-weight: 400;
@@ -189,7 +158,7 @@ section ul li{
 }
 
 section > h1 {
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 600;
 }
 
@@ -206,11 +175,69 @@ section > h1 {
     background-color: var(--light-orange);
     position: absolute;
     bottom: -10px;
-
 }
 
-/* CONTACT PAGE */
+/* HOME SECTION */
+#home {
+    background: url(../img/mountains.jpg) center center, rgba(61, 52, 139, .6);
+    background-size: cover;
+    background-blend-mode: darken;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+    color: var(--white);
+    font-size: 1.5em;
+    font-weight: 500;
+}
 
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome h1 {
+    color: var(--white);
+    font-weight: bolder;
+    font-size: 3.4em;
+    margin: 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-size: 0.6em;
+}
+
+.buttons {
+    padding-top: .7em;
+    position: relative;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.button1 {
+    color: var(--white);
+    border: 2px solid var(--white);
+    background-color: transparent;
+}
+
+.button2 {
+    color: var (--light-purple);
+    border: 3px solid var(--white);
+    background-color: var(--white);
+}
+
+/* CONTACT US SECTION */
 .content {
     display: flex;
     flex-direction: column;
@@ -226,7 +253,16 @@ section > h1 {
     font-weight: 400;
 }
 
-/* ABOUT US PAGE */
+.contact-info ul li{
+    font-size: 1em;
+    font-weight: 500;
+}
+
+#guy-typing {
+    width: 200px;
+}
+
+/* ABOUT US SECTION */
 
 .video {
     display: flex;
@@ -236,37 +272,95 @@ section > h1 {
 
 .video p {
     margin-top: 0;
-    padding-right: 1em;
-    font-size: 2em;
+    font-size: 1.2em;
     font-weight: 500;
     color: var(--blue);
-    max-width: 60%;
+    max-width: 100%;
 }
 
-/* WIDE SCREEN */
+.player {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.stepupvid{
+    width:400px;
+    height: 230px;
+}
+
+
+/* TABLET SPECIFIC */
 @media (min-width: 900px) {
 
-        /* Contact Us */
-        .content {
-            display: flex;
-            flex-direction: row;
-        }
+    body{
+        font-size: 1em;
+    }
     
+    .content {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #home {
+        font-size: 2em;
+    }
+
+    .buttons{
+        gap: 50px;
+    }
+
+    section > h1 {
+        font-size: 3em;
+    }
+
+    .stepupvid{
+        width:60%;
+        height: auto;
+    }
+
+    .guy-typing {
+        width: 300px;
+    }
+
+    .video p {
+        font-size: 2em;
+    }
+
 }
 
-/* WIDEst SCREEN */
+/* WIDE SCREEN SPECIFIC */
 @media (min-width: 1300px) {
-
-    /* HEADER */
-    .bars{
+    .bars {
         display: none;
-        }
+    }
 
     nav ul {
-        display: inline-block;
+        display: flex;
         list-style-type: none;
         margin: 0;
         padding: 10px 0px;
     }
 
+    nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    #about-us, #contact, #log-in {
+        max-width: 60%;
+    }
 }

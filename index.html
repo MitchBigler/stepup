@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <!-- HEADER/DISCLAIMER
  
-Project:  Project4-Responsive Web Site
-Name: Mitchel Bigler
-Submitted: 7/21/24
- 
-I declare that the following source code was written by me, or provided
-by the instructor for this project. I understand that copying source
-code from any other source, providing source code to another student, 
-or leaving my code on a public web site constitutes cheating.
-I acknowledge that  If I am found in violation of this policy this may result
-in a zero grade, a permanent record on file and possibly immediate failure of the class.
- 
---REFLECTION--
-For this project, I thought I would make a fake website for a youtube channel that
-my dad has been wanting to make. It gave me a lot of ideas for a color pallete and
-and artwork.
+Project:    Project5 - Personal Web Site
+Name:       Mitchel Bigler
+Submitted:  8/2/24
 
-<PROJECT 4> I refactored and organized my css by sections which makes it much easier for me
-to navigate. I also feel like I understand buttons/functions better now. I made the responsive
-bars provide a working nav menu. The theme toggle changes the colors of the header to 
-dark mode and makes it a sidebar.
+Disclaimer:
+    I declare that the following source code was written by me, or provided
+    by the instructor for this project. I understand that copying source
+    code from any other source, providing source code to another student, 
+    or leaving my code on a public web site constitutes cheating.
+    I acknowledge that  If I am found in violation of this policy this may result
+    in a zero grade, a permanent record on file and possibly immediate failure of the class.
+ 
+Changes:
+    -- 
+
+
+
+<PROJECT 5 Reflection> 
+I had to change a lot to get this project working after a lot of bugs that I didn't see in the
+last update. I can see more mistakes when refactoring now which means I learned something in this
+semester ;). The theme version sidebar was a pain when in mobile so I switched it to overhead when
+smaller.
 
 --SELF GRADE--
-REFACTOR CSS-FIX      A
-CSS THEME             A
-CSS THEME TOGGLE      A
+REFACTOR JS                 A / B / C / D / E
+VALIDATION LIBRARY          A / B / C / D / E
+FLEXBOX LAYOUT/FORM HTML    A / B / C / D / E
 
-MOBILE RESPONSIVE     A
+--EXTRA CREDIT COMPLETED--
+FORM MOBILE RESPONSIVE (3pts)    YES
 
 -->
 <html>
 <head>
     <title>Step Up Investing</title>
     <link rel="stylesheet" href="css/main.css">
-    <link id = "theme-sheet" rel="stylesheet" href="css/theme.css">
+    <link id = "theme-sheet" rel="stylesheet" href="css/theme.css" disabled>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -48,14 +51,14 @@ MOBILE RESPONSIVE     A
             StepUp Investing
         </div>
         <nav>
-            <button class="bars" onclick="dropDownNav()">
+            <button class="bars" id="bars">
                 <span style="font-size: 3em"><i class="fa-solid fa-bars"></i></span>
             </button>
             <ul>
+                <li><a href="#" data-section="home">Home</a></li>
                 <li><a href="#" data-section="contact">Contact</a></li>
                 <li><a href="#" data-section="about-us">About Us</a></li>
-                <li><a href="#" data-section="shop">Shop</a></li>
-                <li><a href="#" data-section="home">Home</a></li>
+                <li><a href="#" data-section="log-in">Log Visit</a></li>
             </ul>
         </nav>
     </header>
@@ -78,24 +81,30 @@ MOBILE RESPONSIVE     A
             </ul>
             <div class="video">
                 <p>Watch our videos to learn more!</p>
-                <iframe width="594" height="334" src="https://www.youtube.com/embed/-4tgBbG6RlY?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                <div class="player">
+                <iframe id="stepupvid"src="https://www.youtube.com/embed/-4tgBbG6RlY?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            </div>
         </section>
         <section id="contact">
             <h1 class="underline">Contact Us</h1>
             <div class="content">
                 <div class="contact-info">
-                <p>To get in contact with the StepUp team, reach out on any of these platforms<br>
-                <ul>
-                    <li>Email: stepupinvestingut@gmail.com</li>
-                    <li>Instagram: StepUp.Investing</li>
-                    <li>YouTube: StepUp Investing</li>
-                </ul>
+                    <p>To get in contact with the StepUp team, reach out on any of these platforms:<br>
+                    <ul>
+                        <li>Email: stepupinvestingut@gmail.com</li>
+                        <li>Instagram: StepUp.Investing</li>
+                        <li>YouTube: StepUp Investing</li>
+                    </ul>
                 </div>
                 <figure>
-                    <img src="img/guy typing.svg" alt="Guy Typing" width="300px">
+                    <img id="guy-typing" src="img/guy typing.svg" alt="Guy Typing">
                     <figcaption>Fig 1 - Man Typing on Computer</figcaption>
                 </figure>
             </div>
+        </section>
+        <section id="log-in">
+            <h1 class="underline">Log Your Visit</h1>
+            <p>Nothing here yet.</p>
         </section>
     </main>
     <footer>

@@ -8,16 +8,21 @@
     --light-orange: #f18701;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     display: grid;
     grid-template-areas:
         "header main"
         "header main"
         "header footer";
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 6fr;
     grid-template-rows: auto auto auto;
     height: 100vh;
     margin: 0;
+    overflow-x: hidden;
 }
 
 header {
@@ -26,21 +31,34 @@ header {
     color: var(--white);
     display: flex;
     flex-direction: column;
+    width: 100%;
+    min-width: 15vw;
 }
 
 main {
     grid-area: main;
     background-color: var(--white);
+    width: 100%;
 }
 
 footer {
     grid-area: footer;
     background-color: var(--beige);
+    width: 100%;
 }
 
 /* SIDEBAR */
-nav{
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
     width: 100%;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
 }
 
 nav ul {
@@ -56,6 +74,7 @@ nav ul li {
     display: block;
     margin-right: 20px;
     font-weight: 600;
+    width: 100%
 }
 
 nav ul li a {
@@ -63,7 +82,9 @@ nav ul li a {
     color: var(--white);
     padding: 15px 15px;
     border-radius: 10px;
-    display: inline-block;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 nav ul li:hover {
@@ -72,13 +93,6 @@ nav ul li:hover {
 
 nav ul li:hover a {
     color: var(--purple);
-}
-
-nav ul {
-    display: inline-block;
-    list-style-type: none;
-    margin: 0;
-    padding: 10px 0px;
 }
 
 .bars {
@@ -93,6 +107,7 @@ nav ul {
     .content {
         display: flex;
         flex-direction: row;
+        width: 100%;
     }
 
 }
@@ -100,26 +115,33 @@ nav ul {
 /* WIDEst SCREEN */
 @media (min-width: 1300px) {
 
-/* HEADER */
-.bars{
-    display: none;
+    /* HEADER */
+    .bars {
+        display: none;
     }
-
 
 }
 
-@media (max-width: 750px) {
+/* SMALL SCREEN */
+@media (max-width: 1050px) {
     body {
         display: grid;
         grid-template-areas:
-            "main main main main main"
-            "main main main main main"
-            "footer footer footer footer footer";
+            "header"
+            "main"
+            "footer";
+        grid-template-columns: auto;
         height: 100vh;
         margin: 0;
+        overflow-x: hidden;
     }
 
     header {
-        display: none;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .bars {
+        display: inline-block;
     }
 }
